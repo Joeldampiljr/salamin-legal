@@ -19,7 +19,7 @@
 <body>
 
 <h1>Privacy Policy — Salamin</h1>
-<p class="updated">Last updated: August 20, 2026</p>
+<p class="updated">Last updated: September 29, 2026</p>
 
 <h2>Who we are</h2>
 <p>Infiniscale, contactable at
@@ -30,27 +30,36 @@
   <tr><th>Data</th><th>Why we collect it</th></tr>
   <tr><td>Email address</td><td>Account creation and sign-in</td></tr>
   <tr><td>Display name (optional)</td><td>Shown to your connections and in the app</td></tr>
+  <tr><td>Profile photo (optional)</td><td>Shown to you and to your connections in the app</td></tr>
   <tr><td>Your reflection answers and chat messages</td><td>
-    Processed to generate your 34-trait strengths profile and to power the Predict/Verify/Present chat features.
-    Sent to our AI provider (OpenAI) for processing — see "Third parties" below.</td></tr>
-  <tr><td>Your computed strengths profile (34-trait ranking, domain scores)</td><td>
+    Processed to generate your 28-trait strengths profile and to power the Predict/Verify/Present chat features.
+    Sent to our AI providers for processing — see "Third parties" below.</td></tr>
+  <tr><td>Your computed strengths profile (28-trait ranking, domain scores)</td><td>
     Powers your dashboard, and is shared with people you accept as connections (per the relationship tag you assign
-    them — Family/Partner see more than Friend).</td></tr>
+    them — see "Connections" below).</td></tr>
   <tr><td>Connections data (who you're connected to, relationship tag, request status)</td><td>
     Powers the Connections and Compare features.</td></tr>
   <tr><td>Camera access</td><td>
-    Only used to scan another user's connection code (a QR code). We do not access your camera roll, and no photo
-    or video is stored — the camera feed is only used live, on your device, to read the code.</td></tr>
+    Only used to scan another user's connection code (a QR code) to send them a connection request. No photo or
+    video is stored — the camera feed is only used live, on your device, to read the code.</td></tr>
+  <tr><td>Photo library access</td><td>
+    Only used if you choose to set a profile photo (Profile → your photo). We only access the single image you
+    pick — never the rest of your library.</td></tr>
+  <tr><td>Purchase confirmation (product purchased, Apple transaction identifiers)</td><td>
+    Sent to us by Apple when you buy a one-time unlock or subscription, so we can grant the access you paid for.
+    See "Payment" below — we never see your card or Apple ID payment details.</td></tr>
   <tr><td>Usage metadata (message counts, AI token usage)</td><td>
     Used to enforce fair-use limits and for our own cost monitoring. Not sold or shared.</td></tr>
 </table>
 
-<p>We do <strong>not</strong> collect precise location, contacts, photos/videos, or any advertising identifiers,
-and we do not run advertising or cross-app tracking SDKs.</p>
+<p>We do <strong>not</strong> collect precise location, contacts, or any advertising identifiers, and we do not
+run advertising or cross-app tracking SDKs.</p>
 
 <h2>Payment</h2>
-<p>Unlocking full results or subscribing happens through an external web checkout outside the app. We do not
-receive or store your card details — that's handled entirely by our payment processor.</p>
+<p>All purchases — one-time unlocks and subscriptions — are made through Apple's In-App Purchase system and billed
+to your Apple ID. Apple collects and processes your payment information directly; we never see or store your card
+or Apple ID billing details. We receive confirmation of your purchase from Apple (the product bought and a
+transaction identifier) so we can grant the access you paid for.</p>
 
 <h2>Third parties we share data with</h2>
 <table>
@@ -58,18 +67,23 @@ receive or store your card details — that's handled entirely by our payment pr
   <tr><td>Supabase (database/auth hosting)</td><td>All account and app data described above</td>
     <td>Our backend infrastructure provider</td></tr>
   <tr><td>OpenAI</td><td>The text of your reflection answers and chat messages, plus your strengths profile
-    when relevant to a conversation</td><td>Generates your profile and the AI chat responses</td></tr>
-  <tr><td>Our payment processor</td><td>Payment details you enter at checkout</td>
-    <td>Processes your payment — we never see or store your card details</td></tr>
+    when relevant to a conversation</td><td>Generates your profile insights and some AI chat responses</td></tr>
+  <tr><td>OpenRouter</td><td>The text of your chat messages and your strengths profile, for certain chat modes
+    (Thinking, Premium) and your one-time report</td><td>Routes those requests to the underlying model
+    (currently Google Gemini or Zhipu's GLM, depending on mode) on our behalf</td></tr>
+  <tr><td>Apple (App Store)</td><td>Nothing from us — Apple already has your payment details as the platform
+    you purchased through. We receive a purchase confirmation back from Apple, described above.</td>
+    <td>Processes your payment; we never see or store your card or Apple ID details</td></tr>
 </table>
 
 <p>We do not sell your personal data.</p>
 
 <h2>Connections and what other people can see</h2>
 <p>Your strengths profile is private by default. When you accept a connection request, the relationship tag you
-assign (Family, Partner, or Friend) determines how much of your profile that person can see — Family and Partner
-connections see your full profile; Friend connections see a limited view. You can review your connections and
-what they were tagged as inside the app.</p>
+assign — Family, Partner, Friend, Coworker, or Business Partner — determines how much of your profile that person
+can see. Family and Partner connections see your full 28-trait profile. Friend, Coworker, and Business Partner
+connections see only your top 10 individual traits; your four domain scores are always visible to any accepted
+connection. You can review your connections and what they're tagged as inside the app.</p>
 
 <h2>Data retention and deletion</h2>
 <p>We keep your account data for as long as your account is active. You can permanently delete your account and
