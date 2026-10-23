@@ -35,9 +35,9 @@
     Processed to generate your 28-trait strengths profile and to power the Predict/Verify/Present chat features.
     Sent to our AI providers for processing — see "Third parties" below.</td></tr>
   <tr><td>Your computed strengths profile (28-trait ranking, domain scores)</td><td>
-    Powers your dashboard, and is shared with people you accept as connections (per the relationship tag you assign
-    them — see "Connections" below).</td></tr>
-  <tr><td>Connections data (who you're connected to, relationship tag, request status)</td><td>
+    Powers your dashboard, and is shared with people you accept as connections, only as deeply as you choose
+    (see "Connections" below).</td></tr>
+  <tr><td>Connections data (who you're connected to, relationship tag, how much you share with each person, request status, and any groups you create such as "Family")</td><td>
     Powers the Connections and Compare features.</td></tr>
   <tr><td>Camera access</td><td>
     Only used to scan another user's connection code (a QR code) to send them a connection request. No photo or
@@ -46,7 +46,7 @@
     Only used if you choose to set a profile photo (Profile → your photo). We only access the single image you
     pick — never the rest of your library.</td></tr>
   <tr><td>Purchase confirmation (product purchased, Apple transaction identifiers)</td><td>
-    Sent to us by Apple when you buy a one-time unlock or subscription, so we can grant the access you paid for.
+    Sent to us by Apple when you buy a Premium subscription, so we can grant the access you paid for.
     See "Payment" below — we never see your card or Apple ID payment details.</td></tr>
   <tr><td>Usage metadata (message counts, AI token usage)</td><td>
     Used to enforce fair-use limits and for our own cost monitoring. Not sold or shared.</td></tr>
@@ -56,7 +56,7 @@
 run advertising or cross-app tracking SDKs.</p>
 
 <h2>Payment</h2>
-<p>All purchases — one-time unlocks and subscriptions — are made through Apple's In-App Purchase system and billed
+<p>Premium subscriptions (Monthly or Annual) are made through Apple's In-App Purchase system and billed
 to your Apple ID. Apple collects and processes your payment information directly; we never see or store your card
 or Apple ID billing details. We receive confirmation of your purchase from Apple (the product bought and a
 transaction identifier) so we can grant the access you paid for.</p>
@@ -66,11 +66,12 @@ transaction identifier) so we can grant the access you paid for.</p>
   <tr><th>Party</th><th>What they receive</th><th>Why</th></tr>
   <tr><td>Supabase (database/auth hosting)</td><td>All account and app data described above</td>
     <td>Our backend infrastructure provider</td></tr>
-  <tr><td>OpenAI</td><td>The text of your reflection answers and chat messages, plus your strengths profile
-    when relevant to a conversation</td><td>Generates your profile insights and some AI chat responses</td></tr>
-  <tr><td>OpenRouter</td><td>The text of your chat messages and your strengths profile, for certain chat modes
-    (Thinking, Premium) and your one-time report</td><td>Routes those requests to the underlying model
-    (currently Google Gemini or Zhipu's GLM, depending on mode) on our behalf</td></tr>
+  <tr><td>OpenRouter</td><td>The text of your chat messages, your strengths profile and ranking, and what is needed
+    to write your one-time report and short profile lines</td><td>Routes these requests to the AI model that
+    generates your report and chat replies (currently OpenAI's GPT-6.1 Sol) on our behalf. The model provider
+    processes this text to produce a response.</td></tr>
+  <tr><td>OpenAI</td><td>The same text as above, only if the primary route through OpenRouter is unavailable</td>
+    <td>Backup route to the same model, used only as a fallback when OpenRouter cannot answer</td></tr>
   <tr><td>Apple (App Store)</td><td>Nothing from us — Apple already has your payment details as the platform
     you purchased through. We receive a purchase confirmation back from Apple, described above.</td>
     <td>Processes your payment; we never see or store your card or Apple ID details</td></tr>
@@ -79,11 +80,17 @@ transaction identifier) so we can grant the access you paid for.</p>
 <p>We do not sell your personal data.</p>
 
 <h2>Connections and what other people can see</h2>
-<p>Your strengths profile is private by default. When you accept a connection request, the relationship tag you
-assign — Family, Partner, Friend, Coworker, or Business Partner — determines how much of your profile that person
-can see. Family and Partner connections see your full 28-trait profile. Friend, Coworker, and Business Partner
-connections see only your top 10 individual traits; your four domain scores are always visible to any accepted
-connection. You can review your connections and what they're tagged as inside the app.</p>
+<p>Connections are a Premium feature. Your strengths profile is private by default. When you accept a connection
+request, you choose how much that person sees: <strong>Limited</strong> (a short written summary only) or
+<strong>Deeper</strong> (your full 28-trait ranking and domain scores). You can change this for each connection at
+any time inside the app. The relationship tag you assign (Family, Partner, Friend, Coworker, or Business Partner)
+is a label to help you organise people.</p>
+<p>You can group connections (for example "Family") and attach a person or a group to an AI chat. When you do, the
+AI uses only what each of those people has chosen to share with you — their full ranking if they shared it in
+depth, otherwise only their short summary — and it is told not to reveal another person's profile to you in the
+chat.</p>
+<p>If your Premium subscription ends, your connections and groups are kept, but only the names of your connections
+stay visible: you cannot open their profiles or use them in chat until you subscribe again.</p>
 
 <h2>Data retention and deletion</h2>
 <p>We keep your account data for as long as your account is active. You can permanently delete your account and
